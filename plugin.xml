@@ -14,7 +14,7 @@
 
 			<config-file target="res/xml/config.xml" parent="/*">
 			  <feature name="Biobeacon">
-				<param name="android-package" value="com.biotekno.beacon.Beacon" />
+				<param name="android-package" value="com.biotekno.beacon.Biobeacon" />
 				<param name="onload" value="true" />
 			  </feature>
 			</config-file>
