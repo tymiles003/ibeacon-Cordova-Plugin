@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
     <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
-            id="org.biotekno.beacon" version="0.0.1">
+            id="org.biotekno.beacon" version="1.1.1">
         <name>Biobeacon</name>
         <description>Biotekno oksijen ibeacon plugin for Cordova By Ozgur Cimen derozgur@gmail.com </description>
         <license>Biotekno Beacon 2.0</license>
         <keywords>cordova,beacon</keywords>		
 	       
 	    <js-module src="www/biobeacon.js" name="Biobeacon">
-            <clobbers target="window.Biobeacon" />
-        </js-module>
-		
+	        <clobbers target="window.Biobeacon" />
+	    </js-module>
+
         <platform name="android">
 
 			<config-file target="res/xml/config.xml" parent="/*">
