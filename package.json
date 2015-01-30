@@ -1,15 +1,17 @@
 {
-    "version": "1.0.3",
-    "name": "com.biotekno.beacon",
+    "version": "0.2.15",
+    "name": "org.biotekno.beacon",
     "cordova_name": "Biobeacon",
-    "description": "Seciton.Pi supported",
-    "license": "Apache 2.0",    
+    "description": "Cordova Beacon Plugin",
+    "license": "Apache 2.0",
+    "repo": "https://github.com/derozgurg/ibeacon-Cordova-Plugin",
+   
     "keywords": [
-        "Cordova",
-        "VabkCom"
+        "cordova",
+        "beacon"
     ],
     "platforms": [
-        "android"        
+        "android"       
     ],
-    "engines": []
+    "engines": []   
 }

@@ -6,16 +6,14 @@ const PluginMethod ={
 	ADD_BEACON :"add_beacon"
 }
 
-function Biobeacon(){
-	console.log("Biobeacon.js contruct");
-	
-	this.addBeacon = function(beacon,onsucceed,onfail){	
+var Biobeacon = function(){}
+Biobeacon.prototype.addBeacon = function(beacon,onsucceed,onfail){	
 	cordova.exec(function(winParam) {
 		if(onsucceed) onsucceed(winParam);
 	},function(error) {
 		if(onfail) onfail(error);
 	},"Beacon",PluginMethod.ADD_BEACON,[beacon.uuid,beacon.major,beacon.minor]);
-}
+};
 
 console.log("Beacon plugin added to module");
 
