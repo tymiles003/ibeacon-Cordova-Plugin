@@ -12,6 +12,8 @@ var Biobeacon = function(){
 }
 
 Biobeacon.addBeacon = function(beacon,onsucceed,onfail){	
+
+	exec(null, null, "Media", "startPlayingAudio", [this.id, this.src, options]);
 	cordova.exec(function(winParam) {
 		if(onsucceed) onsucceed(winParam);
 	},function(error) {

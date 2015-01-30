@@ -12,7 +12,7 @@ import android.util.Log;
 import com.oksijen.lbs.indoorpositioning.proximity.VFProximityBeacon;
 import com.oksijen.lbs.indoorpositioning.proximity.VFProximityManager;
 
-public class Beacon extends CordovaPlugin{
+public class Biobeacon extends CordovaPlugin{
     
 
     private boolean initialized = false ;

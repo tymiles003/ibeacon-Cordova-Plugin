@@ -51,7 +51,7 @@
 		        </service>
 	        </config-file>
 
-			<source-file src="src/android/Beacon.java" target-dir="src/com/biotekno/beacon" />
+			<source-file src="src/android/Biobeacon.java" target-dir="src/com/biotekno/beacon" />
 			<source-file src="src/android/android-beacon-library-2.0.jar" target-dir="libs" framework="true"  />
 			<source-file src="src/android/indoorpositioning-release.jar" target-dir="libs" framework="true"  />
 			
