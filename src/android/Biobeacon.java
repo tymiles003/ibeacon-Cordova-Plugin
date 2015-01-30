@@ -22,7 +22,7 @@ public class Biobeacon extends CordovaPlugin{
     @Override
     public void initialize(CordovaInterface cordova, CordovaWebView webView)  {
        
-        super.initialize(cordova, webView);           
+        super.initialize(cordova, webView);       
         
        
         vfm = VFProximityManager.getInstance();
@@ -52,11 +52,51 @@ public class Biobeacon extends CordovaPlugin{
             }
             
             vfm.addBeacon(new VFProximityBeacon(uuid,major,minor));
+            callbackContext.success();
         
             return true;
         }       
+        if(action.equals("start_proximinity")){
+            
+            startProximintyListener();
+            
+            return true;
+        }
                         
         return false;  
     } 
+    
+    private void startProximintyListener(){
+        vfm.setProximityListener(new VFProximityManager.VFProximityListener() {
+               
+            @Override
+               public void onStarted() {
+                    
+               }
+
+               @Override
+               public void onNotStarted(String error) {
+                   // Could not start tracking.
+               }
+
+               @Override
+               public void onBeaconUpdate(VFProximityBeacon beacon, int proximity) {
+                   // Proximity event
+                   switch(proximity){
+                        case VFProximityManager.PROXIMITY_IMMEDIATE:
+                        
+                        break;
+                        case VFProximityManager.PROXIMITY_NEAR:
+                        
+                        break;
+                        case VFProximityManager.PROXIMITY_FAR:
+                        
+                        break;
+                        case VFProximityManager.PROXIMITY_UNKNOWN:
+                        break;
+                   }
+               }
+        });     
+    }
     
 }

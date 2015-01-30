@@ -11,15 +11,21 @@ var Biobeacon = function(){
 	console.log("Constructer beacon")
 }
 
-Biobeacon.addBeacon = function(beacon,onsucceed,onfail){	
-
-	exec(null, null, "Media", "startPlayingAudio", [this.id, this.src, options]);
+Biobeacon.addBeacon = function(beacon,onsucceed,onfail){		
 	cordova.exec(function(winParam) {
 		if(onsucceed) onsucceed(winParam);
 	},function(error) {
 		if(onfail) onfail(error);
-	},"Beacon","add_beacon",[beacon.uuid,beacon.major,beacon.minor]);
+	},"Biobeacon","add_beacon",[beacon.uuid,beacon.major,beacon.minor]);
 };
+
+Biobeacon.startRanging = function(onStart,onBeaconUpdate,onFail){
+	cordova.exec(function(winParam) {
+		if(onsucceed) onsucceed(winParam);
+	},function(error) {
+		if(onfail) onfail(error);
+	},"Biobeacon","start_proximinity",[]);	
+}
 
 console.log("Beacon plugin added to module");
 
