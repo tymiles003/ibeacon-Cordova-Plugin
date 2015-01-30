@@ -7,7 +7,7 @@
         <keywords>cordova,beacon</keywords>		
 	       
 	    <js-module src="www/biobeacon.js" name="Biobeacon">
-            <clobbers target="Biobeacon" />
+            <clobbers target="window.Biobeacon" />
         </js-module>
 		
         <platform name="android">
@@ -52,8 +52,8 @@
 	        </config-file>
 
 			<source-file src="src/android/Beacon.java" target-dir="src/com/biotekno/beacon" />
-			<source-file src="src/android-beacon-library-2.0.jar" target-dir="libs" framework="true"  />
-			<source-file src="src/indoorpositioning-release.jar" target-dir="libs" framework="true"  />
+			<source-file src="src/android/android-beacon-library-2.0.jar" target-dir="libs" framework="true"  />
+			<source-file src="src/android/indoorpositioning-release.jar" target-dir="libs" framework="true"  />
 			
 		</platform>  
 		
