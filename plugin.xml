@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+            id="org.biotekno.beacon" version="0.0.1">
+        <name>Biobeacon</name>
+        <description>Biotekno oksijen ibeacon plugin for Cordova By Ozgur Cimen derozgur@gmail.com </description>
+        <license>Biotekno Beacon 2.0</license>
+        <keywords>cordova,beacon</keywords>		
+	       
+	    <js-module src="www/biobeacon.js" name="Biobeacon">
+            <clobbers target="Biobeacon" />
+        </js-module>
+		
+        <platform name="android">
+
+			<config-file target="res/xml/config.xml" parent="/*">
+			  <feature name="Biobeacon">
+				<param name="android-package" value="com.biotekno.beacon.Beacon" />
+				<param name="onload" value="true" />
+			  </feature>
+			</config-file>
+
+			<config-file target="AndroidManifest.xml" parent="/manifest">
+	           <uses-permission android:name="android.permission.BLUETOOTH" />
+			   <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+			   <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />	           
+	        </config-file>
+
+			<config-file target="AndroidManifest.xml" parent="/manifest">
+	            <uses-sdk android:minSdkVersion="18" android:targetSdkVersion="21" />         
+	        </config-file>
+	        
+	        <config-file target="AndroidManifest.xml" parent="/manifest/application">
+	        	<receiver android:name="org.altbeacon.beacon.startup.StartupBroadcastReceiver" >
+		            <intent-filter>
+		                <action android:name="android.intent.action.BOOT_COMPLETED" />
+		                <action android:name="android.intent.action.ACTION_POWER_CONNECTED" />
+		                <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED" />
+		            </intent-filter>
+		        </receiver>
+
+		        <service
+		            android:name="org.altbeacon.beacon.service.BeaconService"
+		            android:enabled="true"
+		            android:exported="true"
+		            android:isolatedProcess="false"
+		            android:label="beacon" >
+		        </service>
+		        <service
+		            android:name="org.altbeacon.beacon.BeaconIntentProcessor"
+		            android:enabled="true" >
+		        </service>
+	        </config-file>
+
+			<source-file src="src/android/Beacon.java" target-dir="src/com/biotekno/beacon" />
+			<source-file src="src/android-beacon-library-2.0.jar" target-dir="libs" framework="true"  />
+			<source-file src="src/indoorpositioning-release.jar" target-dir="libs" framework="true"  />
+			
+		</platform>  
+		
+    </plugin>

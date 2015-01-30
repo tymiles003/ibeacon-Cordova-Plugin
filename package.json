@@ -1,0 +1,15 @@
+{
+    "version": "1.0.3",
+    "name": "com.biotekno.beacon",
+    "cordova_name": "Biobeacon",
+    "description": "Seciton.Pi supported",
+    "license": "Apache 2.0",    
+    "keywords": [
+        "Cordova",
+        "VabkCom"
+    ],
+    "platforms": [
+        "android"        
+    ],
+    "engines": []
+}
