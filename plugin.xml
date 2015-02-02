@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-    <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
-            id="org.biotekno.beacon" version="1.1.1">
+    <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="org.biotekno.beacon" version="1.1.1">
+    	
         <name>Biobeacon</name>
         <description>Biotekno oksijen ibeacon plugin for Cordova By Ozgur Cimen derozgur@gmail.com </description>
         <license>Biotekno Beacon 2.0</license>
@@ -37,7 +37,6 @@
 		                <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED" />
 		            </intent-filter>
 		        </receiver>
-
 		        <service
 		            android:name="org.altbeacon.beacon.service.BeaconService"
 		            android:enabled="true"
